@@ -1,0 +1,20 @@
+POST http://localhost:3000/signup
+Content-Type:application/json
+
+{
+    "emailAddress":"jypark@alcherainc.com",
+    "userPassword": "1234",
+    "studentID": "2016000000",
+    "GPA":1.1,
+    "semester":7,
+    "major":"컴퓨터공학과",
+    "university":"동국대학교",
+    "introduction":"개발자입니다."
+}
+
+###
+
+
+GET http://localhost:3000/signin/post
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjAxMDc5MDc0MjQ0IiwiaW5mbyI6Iu2GoO2BsOyXkCDrhKPqs6Dsi7bsnYDqsbAiLCJpYXQiOjE2MjkwMzkyNzQsImV4cCI6MTYyOTAzOTMzNH0.lhXQq55lZxziMjKS4bO8EHkkO8TAhS5P9XvKlW4oylU
+
