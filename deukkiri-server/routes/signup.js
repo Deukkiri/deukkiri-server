@@ -6,7 +6,7 @@ var signupBusinnessModules = require('../services/signup')
 
 /** 
  * @description signup routine.
- * @param {JSON} req {
+ * @param {JSON} req.body {
     "emailAddress":"jypark@alcherainc.com",
     "userPassword": "1234",
     "studentID": "2016000000",
@@ -18,28 +18,29 @@ var signupBusinnessModules = require('../services/signup')
 }
  * @param {JSON} res respond with data result data
  */
-router.post('/', async function(req, res, next) {
+router.post('/signup/', async function(req, res, next) {
   try {
       if(await signupBusinnessModules.duplicationCheck(req)){
-        var ret = await signupBusinnessModules.signupModule(req)
+        var ret = await signupBusinnessModules.signupModule(req);
         res.status(200).send({
           result : true,
           message : 'Successfully signed up',
-          data : ret
-        })
+          data : ret,
+        });
       }else{
         res.status(200).send({
           result : false,
           message : 'already exists in enrolled email.',
-          data : ret
-        })
+          data : ret,
+        });
       }
   } catch (error) {
     console.log(error)
     res.status(200).send({
         result : false,
-        message : 'Signup failed'
-    })
+        message : 'Signup failed',
+    });
   }
 });
+
 module.exports = router;
