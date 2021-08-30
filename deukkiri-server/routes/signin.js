@@ -19,13 +19,20 @@ var signInBusinnessModules = require('../services/signin')
 
 router.get('/', async function (req, res, next) {
     try {
-        res.status(200).send({
-            result : true,
-            message : 'Successfully signed in',
-            data : await signInBusinnessModules.signInCheck(req),
-          });
-    }
-    catch (error) {
+        var ret = await signInBusinnessModules.signInCheck(req)
+        if (ret) {
+            res.status(200).send({
+                result: true,
+                message: 'Successfully signed in',
+                data: ret,
+            });
+        }else{
+            res.status(200).send({
+                result: false,
+                message: 'The account does not exist',
+            });
+        }
+    } catch (error) {
         console.log(error)
         res.status(200).send({
             result: false,
