@@ -17,7 +17,7 @@ var signInBusinnessModules = require('../services/signin')
  * @param {JSON} res respond with data result data
  */
 
-router.post('/signin/', async function (req, res, next) {
+router.get('/', async function (req, res, next) {
     try {
         res.status(200).send({
             result : true,

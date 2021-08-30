@@ -18,7 +18,7 @@ var signupBusinnessModules = require('../services/signup')
 }
  * @param {JSON} res respond with data result data
  */
-router.post('/signup/', async function(req, res, next) {
+router.post('/', async function(req, res, next) {
   try {
       if(await signupBusinnessModules.duplicationCheck(req)){
         var ret = await signupBusinnessModules.signupModule(req);

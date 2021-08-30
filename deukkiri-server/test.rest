@@ -14,6 +14,15 @@ Content-Type:application/json
 
 ###
 
+GET http://localhost:3000/signin
+Content-Type:application/json
+
+{
+    "emailAddress":"jypark@alcherainc.com",
+    "userPassword":"1234"
+}
+
+###
 
 GET http://localhost:3000/signin/post
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjAxMDc5MDc0MjQ0IiwiaW5mbyI6Iu2GoO2BsOyXkCDrhKPqs6Dsi7bsnYDqsbAiLCJpYXQiOjE2MjkwMzkyNzQsImV4cCI6MTYyOTAzOTMzNH0.lhXQq55lZxziMjKS4bO8EHkkO8TAhS5P9XvKlW4oylU

@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cors = require('cors');
 
 var signupRouter = require('./routes/signup');
+var signinRouter = require('./routes/signin');
 
 var app = express();
 app.use(cors());
@@ -15,5 +16,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/signup',signupRouter);
+app.use('/signin',signinRouter);
 
 module.exports = app;
